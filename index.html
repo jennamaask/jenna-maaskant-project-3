@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <section class="landing">
+        <h1>Beach Please</h1>
+        <p>Wouldn't it be nice if we could spend all of our time standing next to the ocean?</p>
+        <form action="">
+            <fieldset class="waves">
+                <legend>How big of waves?</legend>
+                <label for="flat">Flat</label>
+                <input type="radio" name="wave-size" value="flat" id ="flat" required="true">
+
+                <label for="gentle-swell">Gentle Swell</label>
+                <input type="radio" name="wave-size" value="gentle" id="gentle-Swell" required="true">
+
+                <label for="big-waves">Big Beautiful Waves</label>
+                <input type="radio" name="wave-size" value="big" id="big-waves" required="true">
+            </fieldset>
+            <fieldset class="time">
+                <legend>What time of day?</legend>
+                <label for="sunrise">Sunrise/Sunset</label>
+                <input type="radio" name="time-of-day" value="sunrise" id="sunrise" required="true">
+
+                <label for="day">Day</label>
+                <input type="radio" name="time-of-day" value="day" id="day" required="true">
+
+                <label for="night">Night</label>
+                <input type="radio" name="time-of-day" value="night" id="night" required="true">
+            </fieldset>
+            <fieldset class="climate">
+                <legend>Weather</legend>
+                <label for="sunny">Sunny</label>
+                <input type="radio" name="weather" value="sunny" id="sunny" required="true">
+                <label for="Stormy">Stormy</label>
+                <input type="radio" name="weather" value="stormy" id="stormy" required="true">
+            </fieldset>
+            <fieldset class="noises">
+                <legend>What do you like to listen to at the ocean? Choose as many as you like</legend>
+                <label for="birds">Birds</label>
+                <input type="checkbox" name="birds" value="birds" id="birds">
+                <label for="boats">Boats</label>
+                <input type="checkbox" name="boats" value="boats" id="boats">
+                <label for="beers">Beers</label>
+                <input type="checkbox" name="beers" value="beers" id="beers">
+            </fieldset>
+            <input type="submit" value="Take me to the ocean">
+        </form>
+    </section>
+
+    <section class="beach">
+        <div class="cloudy">
+        </div>
+        <div class="lightning">
+        </div>
+        <div class="exit">
+
+        </div>
+        <audio loop class="wave-sound">
+            <source src="sound-bites/waves.wav">
+        </audio>
+        <audio loop class="thunder-sound">
+            <source src="sound-bites/thunder.wav">
+        </audio>
+
+        <audio class="beers-sound">
+            <source src="sound-bites/cheers.wav">
+        </audio>
+
+        <audio class="birds-sound">
+            <source src="sound-bites/birds.wav">
+        </audio>
+
+        <audio class="boats-sound">
+            <source src="sound-bites/foghorn.wav">
+        </audio>
+        
+    </section>
+
+
+</body>
+<script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+<script src="scripts./script.js"></script>
+</html>

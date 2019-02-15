@@ -1,0 +1,43 @@
+.beach svg {
+    position: absolute;
+    bottom:0;
+    z-index: 20;
+}
+
+.beach {
+    position: relative;
+    height: 100vh;
+}
+
+.cloudy {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    filter: grayscale(1);
+    z-index: 10;
+    display: none;
+}
+
+.lightning {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    filter: grayscale(2) brightness(3);
+    z-index: 11;
+    animation: flash 7s infinite;
+    display: none;
+}
+
+@keyframes flash {
+    from { opacity: 0; } 
+    15% { opacity: 0; }
+	20% { opacity: 0.6; }
+    21% { opacity: 0.2; }
+    22% { opacity: 0.9; } 
+    23% { opacity: 0; }
+	to { opacity: 0; }
+}

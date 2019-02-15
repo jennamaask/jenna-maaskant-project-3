@@ -1,0 +1,7 @@
+.beach svg {
+  position: absolute;
+  bottom: 0; }
+
+.beach {
+  position: relative;
+  height: 100vh; }
