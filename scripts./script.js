@@ -1,12 +1,6 @@
 
 const myApp = {};
 
-// myApp.soundBites = {
-//     birds: $(".bird-sound")[0],
-//     boats: $(".boat-sound")[0],
-//     beers: $(".wave-sound")[0]
-// } 
-
 //wave SVG's
 myApp.waveGraphics = {
     flat:
@@ -39,6 +33,11 @@ myApp.background = {
     day: "linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%)",
     night: "linear-gradient(to top, #283048, #859398)"
 };
+
+myApp.soundDelay = {
+    boats: 10000,
+    birds: 3000
+}
 
 
 
@@ -93,16 +92,44 @@ myApp.playSoundClips = (weather, userSounds) => {
             thunder.play();
         }, 1000);
     };
-    userSounds.forEach((item) => {
-            myApp.soundDelay(item);
-            // $(`.${item}-sound`)[0].play();
+    userSounds.forEach((item, index) => {
+        if (item === "beers") {
+            myApp.beerSoundEffect();
+        } else {
+            myApp.otherSoundEffects(item, index);
+        }
     });
 };
 
-myApp.soundDelay = (item) => {
-    
-}
+// beer sound effect 
+myApp.beerSoundEffect = () => {
+    $(".beers-sound")[0].play();
+    setTimeout(() => {
+        $(".cheers-sound")[0].play();
+    }, 3000);
+    $(".cheers-sound")[0].addEventListener("ended", function() {
+        setTimeout(() => {
+            $(".beers-sound")[0].play();
+            setTimeout(() => {
+                $(".cheers-sound")[0].play();
+            }, 3000);
+        }, 15000);
+    });
+};
 
+// sound effects for options besides beer
+myApp.otherSoundEffects = (item, index) => {
+    const interval = 4000;
+    setTimeout(() => {
+       $(`.${item}-sound`)[0].play();
+    }, index * interval);
+    $(`.${item}-sound`)[0].addEventListener("ended", function() {
+        setTimeout(() => {
+            $(`.${item}-sound`)[0].currentTime = 0;
+            $(`.${item}-sound`)[0].play();
+        }, myApp.soundDelay[item]);
+    });
+};
 
 $(function(){
     myApp.init();
