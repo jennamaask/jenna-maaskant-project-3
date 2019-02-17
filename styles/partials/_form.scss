@@ -1,0 +1,101 @@
+fieldset {
+    border: none;
+    margin-bottom: 100px;
+    // padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.landing {
+    // height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(../assets/background-image.png);
+}
+form {
+    background: white;
+    padding: 100px 50px;
+    border-radius: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    color: #2a2e45;
+    width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #2a2e45;
+    font-size: 6rem;
+    font-family: 'Staatliches', cursive;
+    margin: 0;
+}
+
+p {
+    font-family: 'Noto Sans', sans-serif;
+    color: #2a2e45;
+    font-size: 1.5rem;
+}
+label {
+    position: relative;
+    padding: 100px 47.5px 20px;
+    width: 80px;
+    height: 55px;
+    text-align: center;
+    border: 3px solid #ff7e6b;
+    border-radius: 50%;
+    margin-top: 30px;
+    color: #ff7e6b;
+}
+
+input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+input[type="checkbox"]:checked + label {
+    background: #ff7e6b;
+    color: white;
+}
+input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+}
+
+form svg {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    color: #ff7e6b;
+    // right: 0;
+}
+
+legend {
+    text-align: center;
+    width: 100%;
+    font-family: 'Staatliches', cursive;
+    font-size: 2.5rem;
+}
+
+input[type="radio"]:checked + label {
+    background: #ff7e6b;
+    color: white;
+    // border: none;
+}
+
+input[type="radio"]:focus + label {
+    box-shadow: 0 0 20px #ff7e6b;
+}
+
+input[type="checkbox"]:focus + label {
+    box-shadow: 0 0 20px #ff7e6b;
+}
+
+
+
+// label[for="gentle-swell"]::before{
+//     @include label-icon(url(../assets/swell-icon.svg));
+// }

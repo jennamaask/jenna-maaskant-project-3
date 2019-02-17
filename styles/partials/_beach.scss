@@ -1,7 +1,29 @@
-.beach svg {
+.wave-1, .wave-2, .wave-3 {
     position: absolute;
     bottom:0;
+    top:0;
+    // left: 0;
+    // right: 0;
+}
+
+.wave-1 {
     z-index: 20;
+}
+
+#wave-1 {
+    fill: #1d5c86;
+}
+
+#wave-2 {
+    fill: #3db2c3;
+}
+
+.wave-2 {
+    z-index: 30;
+}
+
+.wave-3 {
+    z-index: 40;
 }
 
 .beach {
@@ -15,7 +37,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    filter: grayscale(1);
+    filter: grayscale(1) brightness(50%);
     z-index: 10;
     display: none;
 }
@@ -26,7 +48,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    filter: grayscale(2) brightness(3);
+    background: white;
     z-index: 11;
     animation: flash 7s infinite;
     display: none;
@@ -40,4 +62,15 @@
     22% { opacity: 0.9; } 
     23% { opacity: 0; }
 	to { opacity: 0; }
+}
+
+.exit svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px 30px 0 0;
+    fill: white;
+    width: 50px;
+    z-index: 40;
+    cursor: pointer;
 }

@@ -3,27 +3,21 @@ const myApp = {};
 
 //wave SVG's
 myApp.waveGraphics = {
-    flat:
-        `<svg width="100%" height="289px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns: xlink="http://www.w3.org/1999/xlink">
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <path d="M0,9 C41.5731961,3.45572917 103.242467,0.68359375 185.007812,0.68359375 C266.773158,0.68359375 348.6742,3.45572917 430.710937,9 C516.152423,15.125 592.578205,18.1875 659.988281,18.1875 C727.398358,18.1875 794.735597,15.125 862,9 L862,289 L0,289 L0,9 Z" id="Rectangle" fill="#B4D5E1"></path>
-            </g>
-        </svg>
-         
-        <svg width="100%" height="226px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <path d="M0,8.09249146 C42.1044461,16.3511698 104.039342,20.480509 185.804687,20.480509 C267.570033,20.480509 349.20545,16.3511698 430.710937,8.09249146 C514.295653,2.69749715 589.793048,2.07458472e-15 657.203125,0 C724.613202,0 792.878827,2.69749715 862,8.09249146 L862,226 L0,226 L0,8.09249146 Z" id="Rectangle" fill="#B4E1DC"></path>
-            </g>
-        </svg>
-        
-        <svg width="100%" height="193px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <path d="M1,13.0645674 C-5.59607478,34.0568908 31.9885606,44.5530525 113.753906,44.5530525 C195.519252,44.5530525 263.309616,38.2811352 317.125,25.7373005 C382.597736,8.57910018 449.039142,7.97481872e-13 516.449219,7.95807864e-13 C583.859295,7.95807864e-13 699.376222,4.35485581 863,13.0645674 L863,193 L1,193 L1,13.0645674 Z" id="Rectangle" fill="#B4E1D0"></path>
-            </g>
-        </svg>
-        `,
-    gentle:1,
-    big:1
+    flat: {
+        amplitude1: 10,
+        amplitude2: 20,
+        amplitude3: 15
+    },
+    gentle: {
+        amplitude1: 40,
+        amplitude2: 50,
+        amplitude3: 60
+    },
+    big: {
+        amplitude1: 150,
+        amplitude2: 120,
+        amplitude3: 130
+    }
 };
 
 
@@ -47,6 +41,9 @@ myApp.init = () => {
         e.preventDefault();
         myApp.determineUserInput();
         $(".landing").hide();
+            // $(".beach").show();
+            myApp.displayExitIcon();
+            myApp.exit();
     });
 };
 
@@ -59,9 +56,9 @@ myApp.determineUserInput = () => {
     const userSounds = sounds.filter((item) => {
         if ($(`input[name=${item}]`).prop("checked") == true) {
             return item;
-        }
+        };
     });
-    console.log(userSounds);
+    $("audio").show();
     myApp.displayWave(waveSize);
     myApp.displayTimeAndWeather(time, weather);
     myApp.playSoundClips(weather, userSounds);
@@ -69,7 +66,49 @@ myApp.determineUserInput = () => {
 
 // display waves according to user size choice
 myApp.displayWave = (waveSize) => {
-    $(".beach").append(myApp.waveGraphics[waveSize]);
+    // $(".beach").append(myApp.waveGraphics[waveSize]);
+    // if (myApp.wave1 === undefined) {
+
+    myApp.wave1 = $("#wave-1").wavify({
+        height: 400,
+        bones: 4,
+        amplitude: myApp.waveGraphics[waveSize].amplitude1,
+        speed: .15
+    });
+
+    myApp.wave2 = $("#wave-2").wavify({
+        height: 430,
+        bones: 3,
+        amplitude: myApp.waveGraphics[waveSize].amplitude2,
+        speed: .20
+    });
+
+    myApp.wave3 = $("#wave-3").wavify({
+        height: 470,
+        bones: 2,
+        amplitude: myApp.waveGraphics[waveSize].amplitude3,
+        speed: .25
+    });
+// }else{
+//     myApp.wave1.reboot({
+//         height: 400,
+//         bones: 4,
+//         amplitude: myApp.waveGraphics[waveSize].amplitude1,
+//         speed: .15
+//     });
+//     myApp.wave2.reboot({
+//         height: 430,
+//         bones: 3,
+//         amplitude: myApp.waveGraphics[waveSize].amplitude2,
+//         speed: .20
+//     });
+//     myApp.wave3.reboot({
+//         height: 470,
+//         bones: 2,
+//         amplitude: myApp.waveGraphics[waveSize].amplitude3,
+//         speed: .25
+//     });
+// };
 };
 
 //display background according to user time and weather choice
@@ -78,7 +117,7 @@ myApp.displayTimeAndWeather = (time, weather) => {
         $(".beach").css("background", myApp.background[time])
     } else {
         $(".cloudy").css({"background" : myApp.background[time], "display" : "block"});
-        $(".lightning").css({"background" : myApp.background[time], "display" : "block"});
+        $(".lightning").css({"display" : "block"});
     };
 };
 
@@ -104,32 +143,75 @@ myApp.playSoundClips = (weather, userSounds) => {
 // beer sound effect 
 myApp.beerSoundEffect = () => {
     $(".beers-sound")[0].play();
-    setTimeout(() => {
-        $(".cheers-sound")[0].play();
-    }, 3000);
-    $(".cheers-sound")[0].addEventListener("ended", function() {
-        setTimeout(() => {
-            $(".beers-sound")[0].play();
+
             setTimeout(() => {
-                $(".cheers-sound")[0].play();
+                if (!$(".wave-sound")[0].paused && $(".wave-sound")[0].duration > 0){
+
+                    $(".cheers-sound")[0].play();
+                }
             }, 3000);
-        }, 15000);
-    });
+            $(".cheers-sound")[0].addEventListener("ended", function() {
+                setTimeout(() => {
+                    if (!$(".wave-sound")[0].paused && $(".wave-sound")[0].duration > 0){
+                        $(".beers-sound")[0].play();
+                        setTimeout(() => {
+                            $(".cheers-sound")[0].play();
+                        }, 3000);
+                    }
+                    }, 15000);
+            });
+     
+        // };
+    // }, 1000);
+    
 };
 
 // sound effects for options besides beer
 myApp.otherSoundEffects = (item, index) => {
     const interval = 4000;
     setTimeout(() => {
-       $(`.${item}-sound`)[0].play();
+        if (!$(".wave-sound")[0].paused && $(".wave-sound")[0].duration > 0){
+            $(`.${item}-sound`)[0].play();
+
+        }
     }, index * interval);
     $(`.${item}-sound`)[0].addEventListener("ended", function() {
         setTimeout(() => {
-            $(`.${item}-sound`)[0].currentTime = 0;
-            $(`.${item}-sound`)[0].play();
+            if (!$(".wave-sound")[0].paused && $(".wave-sound")[0].duration > 0){
+                $(`.${item}-sound`)[0].currentTime = 0;
+                $(`.${item}-sound`)[0].play();
+
+            }
         }, myApp.soundDelay[item]);
     });
 };
+
+// insert exit svg into "exit" div
+myApp.displayExitIcon = () => {
+    $(".exit").html(`<svg class="exit-icon" xmlns="http://www.w3.org/2000/svg" xmlns: xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml: space="preserve"><path d="M24.762,79.088c0.507,0.508,1.173,0.762,1.838,0.762c0.665,0,1.331-0.254,1.838-0.762L50,57.527l21.562,21.562  c0.507,0.508,1.173,0.762,1.838,0.762c0.665,0,1.331-0.254,1.838-0.762c1.016-1.015,1.016-2.662,0-3.677L53.677,53.85l21.562-21.562  c1.016-1.015,1.016-2.662,0-3.677c-1.014-1.016-2.662-1.016-3.677,0L50,50.173L28.438,28.612c-1.014-1.016-2.662-1.016-3.677,0  c-1.016,1.015-1.016,2.662,0,3.677L46.324,53.85L24.762,75.412C23.746,76.427,23.746,78.073,24.762,79.088z" /></svg>`);
+}
+
+// on click remove all beach display and audio and return to landing page
+myApp.exit = () => {
+    $(".exit-icon").on("click", function() {
+        myApp.wave1.kill();
+        myApp.wave2.kill();
+        myApp.wave3.kill();
+        $(".wave-graphic").each(() => {
+            // $(this).children("path").attr("d", "");
+            console.log($(this).children("path"));
+        });
+        $(".landing").show();
+        $(".lightning").hide();
+        $(".cloudy").hide();
+        $(".beach").css("background", "none");
+        $(".exit").html("");
+        $("audio").each(function() {
+            $(this)[0].pause();
+        });
+        $("form")[0].reset();
+    })
+}
 
 $(function(){
     myApp.init();

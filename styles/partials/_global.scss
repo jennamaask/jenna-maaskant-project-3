@@ -1,3 +1,15 @@
+@mixin label-icon($image){
+    content:"";
+    background-image: $image;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+}
+
 body {
     margin: 0;
+    font-size: 125%;
 }
+
