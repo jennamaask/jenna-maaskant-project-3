@@ -1,15 +1,28 @@
-@mixin label-icon($image){
-    content:"";
-    background-image: $image;
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 0;
-}
+$primary-color: #2a2e45;
+$secondary-color-1: white;
+$secondary-color-2: #ff7e6b;
+
+$heading-font: 'Staatliches', cursive;
+$body-font: 'Noto Sans', sans-serif;
 
 body {
     margin: 0;
     font-size: 125%;
 }
+
+@mixin heading($size, $color) {
+    font-family: $heading-font;
+    text-align: center;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin body-text($size) {
+    font-family: $body-font;
+    text-align: center;
+    color: $primary-color;
+    font-size: $body-font;
+}
+
+
 
