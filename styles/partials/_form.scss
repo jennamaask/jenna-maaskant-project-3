@@ -1,20 +1,19 @@
 fieldset {
     border: none;
     margin-bottom: 100px;
-    // padding-top: 100px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .landing {
-    // height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: url(../assets/background-image.png);
 }
+
 form {
     background: white;
     padding: 100px 50px;
@@ -22,7 +21,11 @@ form {
     font-family: 'Noto Sans', sans-serif;
     color: #2a2e45;
     width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 h1 {
@@ -37,6 +40,7 @@ p {
     color: #2a2e45;
     font-size: 1.5rem;
 }
+
 label {
     position: relative;
     padding: 100px 47.5px 20px;
@@ -45,8 +49,9 @@ label {
     text-align: center;
     border: 3px solid #ff7e6b;
     border-radius: 50%;
-    margin-top: 30px;
+    margin: 30px 2px 0;
     color: #ff7e6b;
+    cursor: pointer;
 }
 
 input[type="checkbox"] {
@@ -57,6 +62,24 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked + label {
     background: #ff7e6b;
     color: white;
+    svg {
+        fill: white;
+    }
+    g {
+        stroke: white;
+        circle {
+            stroke: white;
+        }
+    }
+    .sun-storm {
+            color: white;
+            text-decoration-color: white;
+            // solid-color: #ff7e6b;
+            fill: white;
+    }
+    path {
+        stroke: white;
+    }
 }
 input[type="radio"] {
     opacity: 0;
@@ -69,8 +92,22 @@ form svg {
     position: absolute;
     top: 20px;
     left: 0;
-    color: #ff7e6b;
-    // right: 0;
+    fill: #ff7e6b;
+    g {
+        stroke: #ff7e6b;
+        circle {
+            stroke: #ff7e6b;
+        }
+    }
+    .sun-storm {
+            color: #ff7e6b;
+            text-decoration-color: #ff7e6b;
+            // solid-color: #ff7e6b;
+            fill: #ff7e6b;
+    }
+    path {
+        stroke: #ff7e6b;
+    }
 }
 
 legend {
@@ -83,7 +120,24 @@ legend {
 input[type="radio"]:checked + label {
     background: #ff7e6b;
     color: white;
-    // border: none;
+    svg {
+        fill: white;
+    }
+    g {
+        stroke: white;
+        circle {
+            stroke: white;
+        }
+    }
+    .sun-storm {
+            color: white;
+            text-decoration-color: white;
+            // solid-color: #ff7e6b;
+            fill: white;
+    }
+    path {
+        stroke: white;
+    }
 }
 
 input[type="radio"]:focus + label {
@@ -92,6 +146,15 @@ input[type="radio"]:focus + label {
 
 input[type="checkbox"]:focus + label {
     box-shadow: 0 0 20px #ff7e6b;
+}
+
+input[type="submit"] {
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    
 }
 
 

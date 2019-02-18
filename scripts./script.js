@@ -68,7 +68,7 @@ myApp.determineUserInput = () => {
 myApp.displayWave = (waveSize) => {
     // $(".beach").append(myApp.waveGraphics[waveSize]);
     // if (myApp.wave1 === undefined) {
-
+    $(".beach").css("height", "100vh");
     myApp.wave1 = $("#wave-1").wavify({
         height: 400,
         bones: 4,
@@ -143,7 +143,6 @@ myApp.playSoundClips = (weather, userSounds) => {
 // beer sound effect 
 myApp.beerSoundEffect = () => {
     $(".beers-sound")[0].play();
-
             setTimeout(() => {
                 if (!$(".wave-sound")[0].paused && $(".wave-sound")[0].duration > 0){
 
@@ -172,7 +171,6 @@ myApp.otherSoundEffects = (item, index) => {
     setTimeout(() => {
         if (!$(".wave-sound")[0].paused && $(".wave-sound")[0].duration > 0){
             $(`.${item}-sound`)[0].play();
-
         }
     }, index * interval);
     $(`.${item}-sound`)[0].addEventListener("ended", function() {
@@ -201,6 +199,7 @@ myApp.exit = () => {
             // $(this).children("path").attr("d", "");
             console.log($(this).children("path"));
         });
+        $(".beach").css("height", "0px");
         $(".landing").show();
         $(".lightning").hide();
         $(".cloudy").hide();

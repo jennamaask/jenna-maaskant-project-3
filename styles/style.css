@@ -10,8 +10,9 @@ fieldset {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
 
 .landing {
   display: -webkit-box;
@@ -36,7 +37,17 @@ form {
   font-family: 'Noto Sans', sans-serif;
   color: #2a2e45;
   width: 600px;
-  margin: 0 auto; }
+  margin: 0 auto 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 h1 {
   color: #2a2e45;
@@ -57,8 +68,9 @@ label {
   text-align: center;
   border: 3px solid #ff7e6b;
   border-radius: 50%;
-  margin-top: 30px;
-  color: #ff7e6b; }
+  margin: 30px 2px 0;
+  color: #ff7e6b;
+  cursor: pointer; }
 
 input[type="checkbox"] {
   opacity: 0;
@@ -67,6 +79,19 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked + label {
   background: #ff7e6b;
   color: white; }
+  input[type="checkbox"]:checked + label svg {
+    fill: white; }
+  input[type="checkbox"]:checked + label g {
+    stroke: white; }
+    input[type="checkbox"]:checked + label g circle {
+      stroke: white; }
+  input[type="checkbox"]:checked + label .sun-storm {
+    color: white;
+    -webkit-text-decoration-color: white;
+    text-decoration-color: white;
+    fill: white; }
+  input[type="checkbox"]:checked + label path {
+    stroke: white; }
 
 input[type="radio"] {
   opacity: 0;
@@ -78,7 +103,18 @@ form svg {
   position: absolute;
   top: 20px;
   left: 0;
-  color: #ff7e6b; }
+  fill: #ff7e6b; }
+  form svg g {
+    stroke: #ff7e6b; }
+    form svg g circle {
+      stroke: #ff7e6b; }
+  form svg .sun-storm {
+    color: #ff7e6b;
+    -webkit-text-decoration-color: #ff7e6b;
+    text-decoration-color: #ff7e6b;
+    fill: #ff7e6b; }
+  form svg path {
+    stroke: #ff7e6b; }
 
 legend {
   text-align: center;
@@ -89,6 +125,19 @@ legend {
 input[type="radio"]:checked + label {
   background: #ff7e6b;
   color: white; }
+  input[type="radio"]:checked + label svg {
+    fill: white; }
+  input[type="radio"]:checked + label g {
+    stroke: white; }
+    input[type="radio"]:checked + label g circle {
+      stroke: white; }
+  input[type="radio"]:checked + label .sun-storm {
+    color: white;
+    -webkit-text-decoration-color: white;
+    text-decoration-color: white;
+    fill: white; }
+  input[type="radio"]:checked + label path {
+    stroke: white; }
 
 input[type="radio"]:focus + label {
   -webkit-box-shadow: 0 0 20px #ff7e6b;
@@ -97,6 +146,13 @@ input[type="radio"]:focus + label {
 input[type="checkbox"]:focus + label {
   -webkit-box-shadow: 0 0 20px #ff7e6b;
   box-shadow: 0 0 20px #ff7e6b; }
+
+input[type="submit"] {
+  text-align: center;
+  font-family: 'Staatliches', cursive;
+  font-size: 2rem;
+  background: none;
+  border: none; }
 
 .wave-1, .wave-2, .wave-3 {
   position: absolute;
@@ -112,6 +168,9 @@ input[type="checkbox"]:focus + label {
 #wave-2 {
   fill: #3db2c3; }
 
+#wave-3 {
+  fill: #a8e5ff; }
+
 .wave-2 {
   z-index: 30; }
 
@@ -119,8 +178,7 @@ input[type="checkbox"]:focus + label {
   z-index: 40; }
 
 .beach {
-  position: relative;
-  height: 100vh; }
+  position: relative; }
 
 .cloudy {
   position: absolute;
