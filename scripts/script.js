@@ -44,6 +44,7 @@ myApp.soundDelay = {
     birds: 2000
 };
 
+// words for svg description tag
 myApp.descriptiveWords = {
     flat: "no waves",
     gentle: "gentle swell",
@@ -203,6 +204,7 @@ myApp.exit = () => {
     });
 };
 
+// document ready
 $(function(){
     myApp.init();
 });
