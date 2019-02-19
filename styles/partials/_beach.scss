@@ -57,14 +57,15 @@
     display: none;
 }
 
+// lightning animation was inspired by this codepen: https://codepen.io/Chrislion_me/pen/rVqwbO
 @keyframes flash {
-    from { opacity: 0; } 
+    0% { opacity: 0; } 
     15% { opacity: 0; }
 	20% { opacity: 0.6; }
     21% { opacity: 0.2; }
     22% { opacity: 0.9; } 
     23% { opacity: 0; }
-	to { opacity: 0; }
+	100% { opacity: 0; }
 }
 
 .exit svg {

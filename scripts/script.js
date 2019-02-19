@@ -41,7 +41,7 @@ myApp.background = {
 // value of delay between different sounds
 myApp.soundDelay = {
     boats: 10000,
-    birds: 3000
+    birds: 2000
 };
 
 myApp.descriptiveWords = {
@@ -153,7 +153,7 @@ myApp.beerSoundEffect = () => {
 
 // sound effects for options besides beer
 myApp.soundEffects = (item, index) => {
-    const interval = 3000;
+    const interval = 4000;
     setTimeout(() => {
         if (!$waveSound.paused && $waveSound.duration > 0){
             if (item === "beers") {

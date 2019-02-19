@@ -11,17 +11,18 @@
 </head>
 <body>
     <!-- start of landing section -->
-    <section class="landing">
+    <main class="landing">
         <div class="wrapper">
-        <h1>Life's a Beach</h1>
+            <h1>Life's a Beach</h1>
             <p>Bummed you can't spend every living moment at the beach? So are we.</p>
             <p>Tell us what you're perfect day at the beach is like, and we'll bring you to a virtual oasis you can escape to at any time.</p>
-        </div>
+        </div> <!-- end of wrapper -->
         <form action="">
             <fieldset class="waves">
                 <legend>How big are the waves?</legend>
                 <input type="radio" name="wave-size" value="flat" id ="flat" required="true">
                 <label for="flat">
+                    <!-- flat water icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
                         viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
                         <g>
@@ -33,11 +34,12 @@
                         <g>
                             <rect stroke-width=".1" x="15" y="61" width="70" height="4" />
                         </g>
-                    </svg>
+                    </svg> <!-- end of flat water icon -->
                     Flat
                 </label> <!-- end of flat label -->
                 <input type="radio" name="wave-size" value="gentle" id="gentle-swell" required="true">
                 <label for="gentle-swell">
+                    <!-- gentle swell icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
                         viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
                         <g>
@@ -52,11 +54,12 @@
                             <path
                                 d="M85,67c-4,0-6.1-1.2-8-2.3c-1.6-0.9-3-1.7-6-1.7c-3,0-4.4,0.8-6,1.7c-1.9,1.1-4,2.3-8,2.3c-4,0-6.1-1.2-8-2.3   c-1.6-0.9-3-1.7-6-1.7c-3,0-4.4,0.8-6,1.7c-1.9,1.1-4,2.3-8,2.3c-4,0-6.1-1.2-8-2.3c-1.6-0.9-3-1.7-6-1.7v-4c4,0,6.1,1.2,8,2.3   c1.6,0.9,3,1.7,6,1.7c3,0,4.4-0.8,6-1.7c1.9-1.1,4-2.3,8-2.3c4,0,6.1,1.2,8,2.3c1.6,0.9,3,1.7,6,1.7c3,0,4.4-0.8,6-1.7   c1.9-1.1,4-2.3,8-2.3s6.1,1.2,8,2.3c1.6,0.9,3,1.7,6,1.7V67z" />
                         </g>
-                    </svg>
+                    </svg> <!-- end of gentle swell icon -->
                     Gentle Swell
                 </label> <!-- end of gentle-swell label -->
                 <input type="radio" name="wave-size" value="big" id="big-waves" required="true">
                 <label for="big-waves">
+                    <!-- big wave icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
                         viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
                         <g>
@@ -77,7 +80,7 @@
                                     points="29,69.5 13.8,58.6 16.2,55.4 29,64.5 43,54.5 57,64.5 71,54.5 86.2,65.4 83.8,68.6 71,59.5 57,69.5 43,59.5   " />
                             </g>
                         </g>
-                    </svg>
+                    </svg> <!-- end of big wave icon -->
                     Big Waves
                 </label> <!-- end of big-wave label -->
             </fieldset> <!-- end of waves fieldset -->
@@ -85,6 +88,7 @@
                 <legend>What time of day is it?</legend>
                 <input type="radio" name="time-of-day" value="sunrise" id="sunrise" required="true">
                 <label for="sunrise">
+                    <!-- sunrise icon -->
                     <svg width="142px" height="56px" viewBox="0 -30 142 160" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g fill="none">
@@ -92,26 +96,28 @@
                                 d="M71.5,52.5 C107.720257,52.5 131.195304,52.5 141.92514,52.5 C142.195304,52.5 135.220257,52.5 121,52.5 C121,25.1619049 98.8380951,3 71.5,3 C44.1619049,3 22,25.1619049 22,52.5 C7.69969058,52.5 0.649951441,52.5 0.850782591,52.5 C11.6499514,52.5 35.1996906,52.5 71.5,52.5 Z"
                                 id="Oval" stroke-width="5"></path>
                         </g>
-                    </svg>
+                    </svg> <!-- end of sunrise icon -->
                     Sunrise/ Sunset
                 </label> <!-- end of sunrise label -->
                 <input type="radio" name="time-of-day" value="day" id="day" required="true">
                 <label for="day">
+                    <!-- day icon -->
                     <svg width="105px" height="105px" viewBox="0 -20 105 180" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g fill="none">
                             <circle id="Oval"stroke-width="6" cx="52.5" cy="52.5" r="49.5"></circle>
                         </g>
-                    </svg>
+                    </svg> <!-- end of day icon -->
                     Day
                 </label> <!-- end of day label -->
                 <input type="radio" name="time-of-day" value="night" id="night" required="true">
                 <label for="night">
+                    <!-- night time icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
                     viewBox="0 0 100 140" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                         <path fill="none" stroke-width="4.5"
                         d="M68,8c1.3,4,2,8.3,2,12.8c0,22.9-18.6,41.4-41.4,41.4c-7,0-13.6-1.7-19.4-4.8c5.4,16.6,21,28.6,39.4,28.6  C71.4,86.1,90,67.5,90,44.6C90,28.7,81.1,15,68,8z" />
-                    </svg>
+                    </svg> <!-- end of night icon -->
                     Night
                 </label> <!-- end of night label -->
             </fieldset> <!-- end of time fieldset -->
@@ -119,6 +125,7 @@
                 <legend>how's the weather?</legend>
                 <input type="radio" name="weather" value="sunny" id="sunny" required="true">
                 <label for="sunny">
+                    <!-- start of sunny icon -->
                     <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
                     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
                     xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -150,11 +157,12 @@
                                 
                                 d="m 1.0136719,1027.3613 a 1.0000999,1.0000999 0 1 0 0,2 l 4.9726562,0 a 1.0000999,1.0000999 0 1 0 0,-2 l -4.9726562,0 z" />
                         </g>
-                    </svg>
+                    </svg> <!-- end of sunny icon -->
                     Sunny
                 </label> <!-- end of sunny label -->
                 <input type="radio" name="weather" value="stormy" id="stormy" required="true">
                 <label for="stormy">
+                    <!-- start of stormy -->
                     <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
                     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
                     xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -182,7 +190,7 @@
                             <path class="sun-storm" stroke-width=".1"
                                 d="m 9.971441,1040.3628 a 0.99918415,0.99962829 0 0 0 -0.686871,0.3024 l -1.978656,1.9776 a 0.99918415,0.99962829 0 1 0 1.412769,1.4135 l 1.978655,-1.9777 a 0.99918415,0.99962829 0 0 0 -0.725897,-1.7158 z" />
                         </g>
-                    </svg>
+                    </svg> <!-- end of stormy icon -->
                     Stormy
                 </label> <!-- end of stormy label -->
             </fieldset> <!-- end of climate fieldset -->
@@ -191,6 +199,7 @@
                 <p>Choose as many as you like</p>
                 <input type="checkbox" name="birds" value="birds" id="birds">
                 <label for="birds">
+                    <!-- start of bird icon -->
                     <svg enable-background="new 0 0 100 100" viewBox="0 0 100 125" xmlns="http://www.w3.org/2000/svg">
                         <g fill="none" stroke-miterlimit="10" stroke-width="3">
                             <path d="m55.677 76.55c11.278 0 13.834-6.333 13.834-6.333v-51.667s-8.835-13.833-18.335 6.333l-28.166 51.667z" />
@@ -201,20 +210,22 @@
                         <path d="m69.737 16.734 9.718 11.243-10.4-.673z" />
                         <path d="m51.834 76.55v8.116" fill="none" stroke-miterlimit="10" stroke-width="3" />
                         <path d="m61.676 76.55v8.116" fill="none" stroke-miterlimit="10" stroke-width="3" />
-                    </svg>
+                    </svg> <!-- end of bird icon -->
                     Birds
                 </label> <!-- end of birds label -->
                 <input type="checkbox" name="boats" value="boats" id="boats">
                 <label for="boats">
+                    <!-- start of boat icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
                         viewBox="0 0 144.083 180" enable-background="new 0 0 144.083 144" xml:space="preserve">
                         <path
                             d="M111.584,118.264c-1.242-1.048-2.789-2.354-5.707-2.354s-4.465,1.305-5.707,2.354c-1.064,0.898-1.861,1.554-3.463,1.631  l14.635-40.776c0.229-0.638,0.002-1.349-0.553-1.736l-17.9-12.513V43.254c0-0.828-0.672-1.5-1.5-1.5H83.25V23.26  c0-0.828-0.672-1.5-1.5-1.5H63.708c-0.828,0-1.5,0.672-1.5,1.5v18.494H54.07c-0.828,0-1.5,0.672-1.5,1.5v21.615L34.669,77.382  c-0.555,0.388-0.781,1.099-0.553,1.736l13.266,36.962c-1.881,0.38-3.061,1.357-4.04,2.185c-1.131,0.955-1.948,1.646-3.768,1.646  s-2.637-0.69-3.768-1.646c-1.241-1.048-2.786-2.354-5.702-2.354v3c1.818,0,2.636,0.69,3.767,1.646  c1.241,1.049,2.786,2.354,5.703,2.354c2.916,0,4.462-1.306,5.703-2.354c1.132-0.955,1.948-1.646,3.768-1.646  c1.818,0,2.636,0.69,3.767,1.646c1.241,1.049,2.786,2.354,5.702,2.354s4.461-1.306,5.702-2.354c1.131-0.955,1.948-1.646,3.767-1.646  c1.819,0,2.636,0.69,3.768,1.646c1.241,1.049,2.788,2.354,5.704,2.354s4.463-1.306,5.705-2.354c1.131-0.956,1.949-1.646,3.77-1.646  c1.818,0,2.635,0.69,3.768,1.646c1.24,1.049,2.787,2.354,5.703,2.354c2.918,0,4.463-1.305,5.707-2.354  c1.131-0.956,1.949-1.646,3.771-1.646c1.82,0,2.639,0.69,3.771,1.646c1.242,1.049,2.789,2.354,5.705,2.354v-3  C113.534,119.91,112.715,119.22,111.584,118.264z M108.131,79.184l-4.689,13.065l-29.213-20.42V55.488L108.131,79.184z   M65.208,24.76H80.25v3.82H65.208V24.76z M65.208,31.58H80.25v10.174H65.208V31.58z M71.229,116.593  c-0.865-0.4-1.906-0.683-3.247-0.683c-2.916,0-4.461,1.306-5.702,2.354c-1.131,0.955-1.948,1.646-3.767,1.646  s-2.636-0.69-3.767-1.646c-1.004-0.849-2.221-1.853-4.187-2.211l-7.494-20.879L71.229,75.49V116.593z M71.229,71.829l-29.213,20.42  l-4.689-13.065l33.902-23.695V71.829z M71.87,51.38l-16.3,11.393V44.754h8.138H81.75h8.139v18.019L73.588,51.38  C73.073,51.019,72.386,51.019,71.87,51.38z M93.782,119.164c-0.383-0.254-0.748-0.559-1.15-0.899  c-1.242-1.049-2.787-2.354-5.703-2.354c-2.918,0-4.463,1.306-5.705,2.354c-1.133,0.956-1.949,1.646-3.77,1.646  c-1.518,0-2.338-0.483-3.225-1.196V75.49l28.164,19.685L93.782,119.164z" />
-                    </svg>
+                    </svg> <!-- end of boat icon -->
                     Boats
                 </label> <!-- end of boats label -->
                 <input type="checkbox" name="beers" value="beers" id="beers">
                 <label for="beers">
+                    <!-- start of beer icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
                                 viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
                         <g>
@@ -223,13 +234,13 @@
                                     d="M65.323,67.422v-4.916c0-4.213-1.721-8.038-4.5-10.821c-2.782-2.782-6.611-4.503-10.823-4.503    s-8.038,1.721-10.821,4.503c-2.782,2.782-4.503,6.608-4.503,10.821v4.916c0,4.213,1.721,8.038,4.503,10.821    c2.782,2.782,6.608,4.503,10.821,4.503s8.041-1.721,10.823-4.503C63.603,75.461,65.323,71.635,65.323,67.422z M67.376,67.434    v16.338c0.003,3.096-1.258,5.91-3.286,7.939C62.061,93.739,59.246,95,56.15,95H43.852c-3.099,0-5.91-1.261-7.939-3.289    c-2.032-2.029-3.289-4.843-3.289-7.939v-16.35v-4.916v-16.35c0-3.096,1.258-5.91,3.289-7.939c0.874-0.874,1.891-1.604,3.011-2.152    c-0.003-0.038-0.006-0.073-0.006-0.111c0-1.976,0.276-4.245,0.718-6.505c0.443-2.257,1.052-4.497,1.738-6.391    c0.399-1.096,0.818-2.076,1.264-2.893c-0.308-1.36-0.446-2.697-0.446-4.022c0-1.187,0.111-2.363,0.308-3.538    c-0.399-0.1-0.759-0.308-1.038-0.586c-0.402-0.399-0.654-0.962-0.651-1.571V8.802c-0.003-1.047,0.425-2.005,1.111-2.691    S43.568,4.997,44.615,5h10.774c1.047-0.003,2.002,0.425,2.688,1.111s1.114,1.645,1.114,2.691v1.645    c0,0.61-0.252,1.173-0.651,1.571c-0.278,0.279-0.639,0.487-1.041,0.586c0.196,1.176,0.308,2.351,0.308,3.538    c0,1.325-0.138,2.662-0.446,4.022c0.446,0.818,0.868,1.797,1.264,2.893c0.46,1.264,0.882,2.679,1.246,4.151    c0.724,2.949,1.211,6.112,1.214,8.745c0,0.038-0.003,0.073-0.006,0.111c1.123,0.548,2.14,1.281,3.011,2.152    c2.029,2.029,3.289,4.843,3.286,7.939v16.338c0,0.006,0,0.009,0,0.012v4.916C67.376,67.425,67.376,67.428,67.376,67.434z     M65.323,83.772v-8.179c-0.812,1.516-1.844,2.896-3.049,4.101C59.129,82.84,54.778,84.798,50,84.798s-9.126-1.958-12.272-5.104    c-1.205-1.208-2.24-2.589-3.052-4.107v8.185c0,2.536,1.026,4.822,2.688,6.488c1.662,1.662,3.949,2.685,6.488,2.688H56.15    c2.536-0.003,4.822-1.026,6.488-2.688C64.3,88.594,65.323,86.308,65.323,83.772z M65.323,54.336v-8.179    c0-2.536-1.023-4.822-2.685-6.488c-1.665-1.662-3.952-2.685-6.488-2.688H43.852c-2.539,0.003-4.825,1.026-6.488,2.688    c-1.662,1.665-2.688,3.952-2.688,6.488v8.185c0.812-1.516,1.847-2.902,3.052-4.107c3.146-3.146,7.493-5.104,12.272-5.104    s9.129,1.958,12.275,5.104C63.479,51.439,64.511,52.82,65.323,54.336z M59.021,35.301c-0.053-1.648-0.296-3.556-0.668-5.456    c-0.422-2.158-1.011-4.312-1.656-6.089c-0.337-0.929-0.689-1.753-1.032-2.41H44.336c-0.343,0.657-0.695,1.48-1.032,2.41    c-0.428,1.184-0.833,2.536-1.181,3.946c-0.633,2.565-1.07,5.327-1.14,7.599c0.915-0.243,1.876-0.372,2.87-0.372H56.15    C57.141,34.929,58.103,35.058,59.021,35.301z M57.138,10.447V8.802c0-0.487-0.193-0.918-0.513-1.24    c-0.32-0.317-0.75-0.51-1.237-0.51H44.615c-0.487,0-0.918,0.193-1.24,0.51c-0.317,0.322-0.51,0.753-0.51,1.24v1.645    c0,0.05,0.015,0.085,0.047,0.12c0.035,0.032,0.07,0.05,0.12,0.05h0.695h12.547h0.695c0.05,0,0.085-0.018,0.12-0.05    C57.121,10.532,57.138,10.497,57.138,10.447z M55.447,19.294c0.214-1.061,0.308-2.108,0.308-3.151    c0-1.149-0.117-2.301-0.328-3.474h-10.85c-0.214,1.173-0.331,2.325-0.331,3.474c0,1.047,0.097,2.09,0.311,3.151H55.447z" />
                             </g>
                         </g>
-                    </svg>
+                    </svg> <!-- end of beer icon -->
                     Beers
                 </label> <!-- end of beers label -->
             </fieldset> <!-- end of noises fieldset  -->
             <input type="submit" value="Take me to the beach">
         </form>
-    </section>
+    </main> <!-- end of landing section -->
 
     <section class="beach">
         <div class="cloudy"></div>

@@ -384,7 +384,7 @@ input[type="submit"]:hover {
   display: none; }
 
 @-webkit-keyframes flash {
-  from {
+  0% {
     opacity: 0; }
   15% {
     opacity: 0; }
@@ -396,11 +396,11 @@ input[type="submit"]:hover {
     opacity: 0.9; }
   23% {
     opacity: 0; }
-  to {
+  100% {
     opacity: 0; } }
 
 @keyframes flash {
-  from {
+  0% {
     opacity: 0; }
   15% {
     opacity: 0; }
@@ -412,7 +412,7 @@ input[type="submit"]:hover {
     opacity: 0.9; }
   23% {
     opacity: 0; }
-  to {
+  100% {
     opacity: 0; } }
 
 .exit svg {
