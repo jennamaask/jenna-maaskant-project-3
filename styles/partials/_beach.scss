@@ -1,3 +1,5 @@
+// Styles for beach display
+
 .wave-1, .wave-2, .wave-3 {
     position: absolute;
     bottom:0;
@@ -5,13 +7,10 @@
 }
 
 #wave-1 {
-    // fill: #1d5c86;
-    // fill: rgb(0,63,145)
     fill: rgba(72,190,255,1);
 }
 
 #wave-2 {
-    // fill: rgba(1,111,185, 0.8);
     fill: rgba(114,205,255,0.9);
 }
 

@@ -132,6 +132,19 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0);
+  overflow: hidden; }
+
 body {
   margin: 0;
   font-size: 125%; }
@@ -155,6 +168,8 @@ body {
 .wrapper {
   width: 800px;
   margin: 0 auto; }
+  .wrapper p {
+    margin: 15px 0; }
 
 h1 {
   font-family: "Staatliches", cursive;
@@ -177,10 +192,10 @@ form {
   color: #2a2e45;
   font-size: "Noto Sans", sans-serif;
   background: white;
-  padding: 100px 50px;
+  padding: 80px 50px;
   border-radius: 20px;
   width: 600px;
-  margin: 40px auto 100px;
+  margin: 30px auto 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -289,7 +304,7 @@ input[type="submit"]:hover {
 
 @media (max-width: 820px) {
   .wrapper {
-    width: 80%; } }
+    width: 90%; } }
 
 @media (max-width: 650px) {
   form {
@@ -304,19 +319,20 @@ input[type="submit"]:hover {
     align-items: center; } }
 
 @media (max-width: 414px) {
-  form, .wrapper {
-    width: 90%; }
   h1 {
     font-size: 4.5rem; }
   p {
     font-size: 1.2rem; }
   form {
     padding: 50px 20px;
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    width: 90%; }
   fieldset {
     margin-bottom: 50px; }
   legend {
-    font-size: 2rem; } }
+    font-size: 2rem; }
+  input[type="submit"] {
+    font-size: 1.8rem; } }
 
 .wave-1, .wave-2, .wave-3 {
   position: absolute;
