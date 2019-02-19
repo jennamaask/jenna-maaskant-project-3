@@ -44,6 +44,17 @@ myApp.soundDelay = {
     birds: 3000
 };
 
+myApp.descriptiveWords = {
+    flat: "no waves",
+    gentle: "gentle swell",
+    big: "big waves",
+    sunrise: "sunrise or sunset",
+    day: "day time",
+    night: "night time",
+    sunny: "sunny",
+    stormy: "stormy"
+}
+
 // event listener for submit
 myApp.init = () => {
     $form.on("submit", function(e){
@@ -70,6 +81,7 @@ myApp.determineUserInput = () => {
     myApp.displayWave(waveSize);
     myApp.displayTimeAndWeather(time, weather);
     myApp.playSoundClips(weather, userSounds);
+    myApp.createSvgDescription(waveSize, time, weather);
 };
 
 // display waves according to user size choice
@@ -98,7 +110,7 @@ myApp.displayWave = (waveSize) => {
 
 //display background according to user time and weather choice
 myApp.displayTimeAndWeather = (time, weather) => {
-    if(weather === "sunny") {
+    if (weather === "sunny") {
         $beach.css("background", myApp.background[time])
     } else {
         $cloudy.css({"background" : myApp.background[time], "display" : "block"});
@@ -109,13 +121,13 @@ myApp.displayTimeAndWeather = (time, weather) => {
 //play audio clips according to user choices
 myApp.playSoundClips = (weather, userSounds) => {
     $waveSound.play();
-    if(weather === "stormy") {
+    if (weather === "stormy") {
         setTimeout(() => {
             $(".thunder-sound")[0].play();
         }, 1000);
     };
     userSounds.forEach((item, index) => {
-            myApp.soundEffects(item, index);
+        myApp.soundEffects(item, index);
     });
 };
 
@@ -124,18 +136,18 @@ myApp.beerSoundEffect = () => {
     $beerSound.play();
     setTimeout(() => {
         if (!$waveSound.paused && $waveSound.duration > 0){
-            $beerSound.play();
+            $cheersSound.play();
         }
     }, 3000);
-    $beerSound.addEventListener("ended", function() {
+    $cheersSound.addEventListener("ended", function() {
         setTimeout(() => {
             if (!$waveSound.paused && $waveSound.duration > 0){
                 $beerSound.play();
                 setTimeout(() => {
-                    $beerSound.play();
+                    $cheersSound.play();
                 }, 3000);
             }
-        }, 15000);
+        }, 8000);
     });   
 };
 
@@ -153,7 +165,6 @@ myApp.soundEffects = (item, index) => {
                         if (!$waveSound.paused && $waveSound.duration > 0){
                             $(`.${item}-sound`)[0].currentTime = 0;
                             $(`.${item}-sound`)[0].play();
-            
                         };
                     }, myApp.soundDelay[item]);
                 });
@@ -162,9 +173,14 @@ myApp.soundEffects = (item, index) => {
     }, index * interval);
 };
 
+// create desciption for wave SVG to make it more accesible
+myApp.createSvgDescription = (waveSize, time, weather) => {
+    $("#beach-description").html(`An ocean with ${myApp.descriptiveWords[waveSize]} during ${myApp.descriptiveWords[time]} with ${myApp.descriptiveWords[weather]} weathers.`);
+}
+
 // insert exit svg into "exit" div
 myApp.displayExitIcon = () => {
-    $exit.html(`<svg class="exit-icon" xmlns="http://www.w3.org/2000/svg" xmlns: xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml: space="preserve"><path d="M24.762,79.088c0.507,0.508,1.173,0.762,1.838,0.762c0.665,0,1.331-0.254,1.838-0.762L50,57.527l21.562,21.562  c0.507,0.508,1.173,0.762,1.838,0.762c0.665,0,1.331-0.254,1.838-0.762c1.016-1.015,1.016-2.662,0-3.677L53.677,53.85l21.562-21.562  c1.016-1.015,1.016-2.662,0-3.677c-1.014-1.016-2.662-1.016-3.677,0L50,50.173L28.438,28.612c-1.014-1.016-2.662-1.016-3.677,0  c-1.016,1.015-1.016,2.662,0,3.677L46.324,53.85L24.762,75.412C23.746,76.427,23.746,78.073,24.762,79.088z" /></svg>`);
+    $exit.html(`<svg class="exit-icon" xmlns="http://www.w3.org/2000/svg" xmlns: xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml: space="preserve" aria-labelledby="exit-title" role="img"><title id="exit-title">Exit button</title><path d="M24.762,79.088c0.507,0.508,1.173,0.762,1.838,0.762c0.665,0,1.331-0.254,1.838-0.762L50,57.527l21.562,21.562  c0.507,0.508,1.173,0.762,1.838,0.762c0.665,0,1.331-0.254,1.838-0.762c1.016-1.015,1.016-2.662,0-3.677L53.677,53.85l21.562-21.562  c1.016-1.015,1.016-2.662,0-3.677c-1.014-1.016-2.662-1.016-3.677,0L50,50.173L28.438,28.612c-1.014-1.016-2.662-1.016-3.677,0  c-1.016,1.015-1.016,2.662,0,3.677L46.324,53.85L24.762,75.412C23.746,76.427,23.746,78.073,24.762,79.088z" /></svg>`);
 };
 
 // on click remove all beach display and audio and return to landing page

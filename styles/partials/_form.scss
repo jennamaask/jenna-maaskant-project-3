@@ -44,6 +44,10 @@ fieldset {
     justify-content: center;
 }
 
+fieldset p {
+    width: 100%;
+}
+
 legend {
     @include heading(2.5rem, $primary-color);
     width: 100%;
@@ -59,8 +63,12 @@ label {
     margin: 30px 1px 0;
     color: $primary-color;
     cursor: pointer;
+    opacity: .6;
 }
 
+label:hover {
+    opacity:1;
+}
 
 form svg {
     height: 100px;
@@ -91,6 +99,7 @@ input[type="checkbox"], input[type="radio"] {
 input[type="checkbox"]:checked + label, input[type="radio"]:checked + label {
     background: $primary-color;
     color: $secondary-color-1;
+    opacity: 1;
     svg {
         fill: $secondary-color-1;
     }

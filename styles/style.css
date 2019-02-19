@@ -204,6 +204,9 @@ fieldset {
   -ms-flex-pack: center;
   justify-content: center; }
 
+fieldset p {
+  width: 100%; }
+
 legend {
   font-family: "Staatliches", cursive;
   text-align: center;
@@ -220,7 +223,11 @@ label {
   border-radius: 50%;
   margin: 30px 1px 0;
   color: #2a2e45;
-  cursor: pointer; }
+  cursor: pointer;
+  opacity: .6; }
+
+label:hover {
+  opacity: 1; }
 
 form svg {
   height: 100px;
@@ -244,7 +251,8 @@ input[type="checkbox"], input[type="radio"] {
 
 input[type="checkbox"]:checked + label, input[type="radio"]:checked + label {
   background: #2a2e45;
-  color: white; }
+  color: white;
+  opacity: 1; }
   input[type="checkbox"]:checked + label svg, input[type="radio"]:checked + label svg {
     fill: white; }
   input[type="checkbox"]:checked + label g, input[type="radio"]:checked + label g {
@@ -316,13 +324,13 @@ input[type="submit"]:hover {
   top: 0; }
 
 #wave-1 {
-  fill: #1d5c86; }
+  fill: #48beff; }
 
 #wave-2 {
-  fill: #3db2c3; }
+  fill: rgba(114, 205, 255, 0.9); }
 
 #wave-3 {
-  fill: #a8e5ff; }
+  fill: rgba(143, 210, 247, 0.8); }
 
 .wave-1 {
   z-index: 20; }
@@ -355,8 +363,8 @@ input[type="submit"]:hover {
   left: 0;
   background: white;
   z-index: 11;
-  -webkit-animation: flash 7s infinite;
-  animation: flash 7s infinite;
+  -webkit-animation: flash 4s infinite;
+  animation: flash 4s infinite;
   display: none; }
 
 @-webkit-keyframes flash {

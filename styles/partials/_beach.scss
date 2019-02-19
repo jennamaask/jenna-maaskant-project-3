@@ -5,15 +5,18 @@
 }
 
 #wave-1 {
-    fill: #1d5c86;
+    // fill: #1d5c86;
+    // fill: rgb(0,63,145)
+    fill: rgba(72,190,255,1);
 }
 
 #wave-2 {
-    fill: #3db2c3;
+    // fill: rgba(1,111,185, 0.8);
+    fill: rgba(114,205,255,0.9);
 }
 
 #wave-3 {
-    fill: #a8e5ff;
+    fill: rgba(143,210,247,0.8);
 }
 
 .wave-1 {
@@ -51,7 +54,7 @@
     left: 0;
     background: $secondary-color-1;
     z-index: 11;
-    animation: flash 7s infinite;
+    animation: flash 4s infinite;
     display: none;
 }
 
